@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="easyui-accordion" style="width:500px;height:300px;" fit="true">
+    <div title="About" data-options="iconCls:'icon-ok'" style="overflow:auto">
+        <h3 style="color:#0099FF;">Accordion for jQuery</h3>
+        <p>Accordion is a part of easyui framework for jQuery. It lets you define your accordion component on web page more easily.</p>
+    </div>
+    <div title="Help" data-options="iconCls:'icon-help'">
+        <p>The accordion allows you to provide multiple panels and display one or more at a time. Each panel has built-in support for expanding and collapsing. Clicking on a panel header to expand or collapse that panel body. The panel content can be loaded via ajax by specifying a 'href' property. Users can define a panel to be selected. If it is not specified, then the first panel is taken by default.</p>
+    </div>
+    <div title="TreeMenu" data-options="iconCls:'icon-search'">
+        <ul id="myTree"></ul>
+    </div>
+</div>
+<script>
+    $("#myTree").tree({
+        url:'menus/',
+        method:'get',
+        onClick:function (node) {
+            if($('#myTabs').tabs('exists',node.text)){
+                $('#myTabs').tabs('select',node.text);
+            }else{
+                $('#myTabs').tabs('add',{
+                    title: node.text,
+                    content: node.text,
+                    closable:true
+                });
+
+            }
+        }
+    })
+</script>
+</body>
+</html>

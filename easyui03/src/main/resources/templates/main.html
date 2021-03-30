@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh_CN" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{common::header('注册')}" ></head>
+<body>
+<div class="easyui-layout" style="width:700px;height:350px;" fit="true">
+    <div data-options="region:'north'" style="height:65px">
+        <img th:src="@{/images/logo.png}" data-options="fit:true">
+    </div>
+    <div data-options="region:'south'" style="height:50px;text-align: center">
+        Copyright All Rightd Reserved.长沙图灵教育科技有限公司 版权所有<br>
+        地址：长沙麓谷企业广场 湘ICP15004237号-4
+    </div>
+    <div data-options="region:'east'" title="East" style="width:252px;">
+        <div class="easyui-calendar" style="width:250px;height:250px;" ></div>
+    </div>
+    <div data-options="region:'west'" title="West" style="width:220px;" th:href="@{/nav}"></div>
+    <div data-options="region:'center',title:'Main Title',iconCls:'icon-ok'">
+        <div id="myTabs" class="easyui-tabs" fit="true"></div>
+    </div>
+</div>
+</body>
+</html>
